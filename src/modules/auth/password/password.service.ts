@@ -22,7 +22,7 @@ export class PasswordService {
         private readonly jwtToken: JwtHelper,
         private readonly password: PasswordHelper,
     ) { }
-1
+
     async changePassword(password: ChangePasswordDto, req: Request) {
         const oldPassword = password.oldPassword;
         const newPassword = password.newPassword;

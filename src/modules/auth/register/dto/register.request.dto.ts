@@ -26,6 +26,6 @@ export class RegisterRequestDto {
     @IsNotEmpty()
     readonly password: string;
 
-    readonly user_profile: string;
+    readonly user_profile: any;
     
 }

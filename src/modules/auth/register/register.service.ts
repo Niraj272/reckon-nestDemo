@@ -9,7 +9,8 @@ import * as bcrypt from 'bcrypt';
 export class RegisterService {
     constructor(@Inject(USER_REPOSITORY) private userrepository: typeof user) { }
 
-    async register(registerBody: RegisterRequestDto) {
+    async register(filePath:string,registerBody: RegisterRequestDto) {
+        console.log(filePath);
         let email = registerBody.email.toLowerCase();
         let user_name = registerBody.user_name;
 
@@ -33,7 +34,7 @@ export class RegisterService {
                     user_name: registerBody.user_name,
                     email: registerBody.email.toLowerCase(),
                     password: hashedPassword,
-                    user_profile: registerBody.user_profile
+                    user_profile: filePath
                 });
             }
         } catch (error) {
